@@ -1,14 +1,25 @@
+Parameters:
+  InstanceType:
+    Description: "Tipo de instância EC2"
+    Type: String
+    Default: "t2.micro"
+  
+  AMI:
+    Description: "ID da AMI"
+    Type: String
+    Default: "ami-04b70fa74e45c3917"
+
 Resources:
   InstanceTestCloudFormation:
     Type: "AWS::EC2::Instance"
     Properties:
-      InstanceType: "t2.micro"
-      ImageId: ami-04b70fa74e45c3917
+      InstanceType: !Ref InstanceType
+      ImageId: !Ref AMI
       KeyName: pessoal-key
       SecurityGroupIds:
         - sg-08e753bf15ecbb42d
       AssociatePublicIpAddress: true
       BlockDeviceMappings:
-        - DeviceName: /dev/xvda
+        - DeviceName: /dev/xvda1
           Ebs:
             VolumeSize: 30
