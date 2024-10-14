@@ -1,5 +1,5 @@
 Resources:
-  Instance-Test-CloudFormation:
+  InstanceTestCloudFormation:
     Type: "AWS::EC2::Instance"
     Properties:
       InstanceType: "t2.micro"
