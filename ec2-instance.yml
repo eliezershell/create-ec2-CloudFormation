@@ -1,0 +1,14 @@
+Resources:
+  Instance-Test-CloudFormation:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      InstanceType: "t2.micro"
+      ImageId: ami-04b70fa74e45c3917
+      KeyName: pessoal-key
+      SecurityGroupIds:
+        - sg-08e753bf15ecbb42d
+      AssociatePublicIpAddress: true
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 30
